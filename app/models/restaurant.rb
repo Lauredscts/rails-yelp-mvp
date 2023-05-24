@@ -5,8 +5,4 @@ class Restaurant < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :category, inclusion: { in: CATEGORY }
-
-  def index
-  @restaurants = Restaurant.all
-  end
 end
