@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   post '/restaurants', to: 'restaurants#create'
   get '/restaurants/:id', to: 'restaurants#show', as: :restaurant
   # REVIEWS ACTIONS
-  get '/restaurants/:id/reviews/new', to: 'reviews#new'
-  post '/restaurants/:id/reviews', to: 'reviews#create'
+  get '/restaurants_id/reviews/new', to: 'reviews#new'
+  post '/restaurants_id/reviews', to: 'reviews#create'
 end
