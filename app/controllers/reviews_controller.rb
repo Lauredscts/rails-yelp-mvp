@@ -5,10 +5,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @review = Review.find(params[:reviews_id])
     @review = Review.new(review_params)
-    @review.restaurant = @restaurant
-    @review.save
-    redirect_to restaurant_path(@restaurant)
+    @review.restaurant = @review
+    if @review.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      render "reviews/show", status: :unprocessable_entity
+    end
   end
 
   private
